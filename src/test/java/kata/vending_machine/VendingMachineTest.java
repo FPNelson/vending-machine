@@ -24,4 +24,11 @@ public class VendingMachineTest {
 		vendingMachine.insertCoin(Coin.NICKEL);
 		assertEquals("0.05", vendingMachine.getDisplayMessage());
 	}
+	
+	@Test
+	public void whenTwoNickelsAreInsertedInVendingMachineThenDisplayAddsTenCentsToTotal() {
+		vendingMachine.insertCoin(Coin.NICKEL);
+		vendingMachine.insertCoin(Coin.NICKEL);
+		assertEquals("0.10", vendingMachine.getDisplayMessage());
+	}
 }

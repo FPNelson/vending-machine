@@ -8,7 +8,7 @@ public class VendingMachine {
 		if(amount == 0)
 			return "INSERT COIN";
 		
-		return String.valueOf(amount);
+		return String.format("%.2f", amount);
 	}
 
 	public void insertCoin(Coin coin) {
