@@ -37,4 +37,11 @@ public class VendingMachineTest {
 		vendingMachine.insertCoin(Coin.DIME);
 		assertEquals("0.10", vendingMachine.getDisplayMessage());
 	}
+	
+	@Test
+	public void whenTwoDimesAreInsertedInVendingMachineThenDisplayAddsTwentyCentsToTotal() {
+		vendingMachine.insertCoin(Coin.DIME);
+		vendingMachine.insertCoin(Coin.DIME);
+		assertEquals("0.20", vendingMachine.getDisplayMessage());
+	}
 }
