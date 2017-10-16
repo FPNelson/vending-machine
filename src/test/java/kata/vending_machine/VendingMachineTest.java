@@ -31,4 +31,10 @@ public class VendingMachineTest {
 		vendingMachine.insertCoin(Coin.NICKEL);
 		assertEquals("0.10", vendingMachine.getDisplayMessage());
 	}
+	
+	@Test
+	public void whenDimeIsInsertedInVendingMachineThenDisplayAddsTenCentsToTotal() {
+		vendingMachine.insertCoin(Coin.DIME);
+		assertEquals("0.10", vendingMachine.getDisplayMessage());
+	}
 }

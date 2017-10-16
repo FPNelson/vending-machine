@@ -16,6 +16,9 @@ public class VendingMachine {
 			case NICKEL:
 				amount += 0.05;
 				break;
+			case DIME:
+				amount += 0.1;
+				break;
 		}
 	}
 	
