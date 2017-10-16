@@ -2,12 +2,26 @@ package kata.vending_machine;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class VendingMachineTest {
+	
+	private VendingMachine vendingMachine;
+	
+	@Before
+	public void setup() {
+		vendingMachine = new VendingMachine();
+	}
+	
 	@Test
 	public void whenNoCoinsAreInsertedInVendingMachineThenVendingMachineDisplaysINSERTCOIN() {
-		VendingMachine vendingMachine = new VendingMachine();
 		assertEquals("INSERT COIN", vendingMachine.getDisplayMessage());
+	}
+	
+	@Test
+	public void whenNickelIsInsertedInVendingMachineThenDisplayAddsFiveCentsToTotal() {
+		vendingMachine.insertCoin(Coin.NICKEL);
+		assertEquals("0.05", vendingMachine.getDisplayMessage());
 	}
 }

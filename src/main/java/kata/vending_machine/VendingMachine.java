@@ -1,9 +1,22 @@
 package kata.vending_machine;
 
 public class VendingMachine {
-
+	
+	double amount = 0.00;
+	
 	public String getDisplayMessage() {
-		return "INSERT COIN";
+		if(amount == 0)
+			return "INSERT COIN";
+		
+		return String.valueOf(amount);
+	}
+
+	public void insertCoin(Coin coin) {
+		switch(coin) {
+			case NICKEL:
+				amount += 0.05;
+				break;
+		}
 	}
 	
 }
