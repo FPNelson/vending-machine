@@ -17,7 +17,10 @@ public class VendingMachine {
 				amount += 0.05;
 				break;
 			case DIME:
-				amount += 0.1;
+				amount += 0.10;
+				break;
+			case QUARTER:
+				amount += 0.25;
 				break;
 		}
 	}
