@@ -50,4 +50,11 @@ public class VendingMachineTest {
 		vendingMachine.insertCoin(Coin.QUARTER);
 		assertEquals("0.25", vendingMachine.getDisplayMessage());
 	}
+	
+	@Test
+	public void whenTwoQuartersAreInsertedInVendingMachineThenDisplayAddsFiftyCentsToTotal() {
+		vendingMachine.insertCoin(Coin.QUARTER);
+		vendingMachine.insertCoin(Coin.QUARTER);
+		assertEquals("0.50", vendingMachine.getDisplayMessage());
+	}
 }
