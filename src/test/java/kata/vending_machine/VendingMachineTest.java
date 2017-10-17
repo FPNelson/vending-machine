@@ -72,6 +72,13 @@ public class VendingMachineTest {
 	}
 	
 	@Test
+	public void whenDisplayMessageCheckedTwiceWithNoMoneyInsertedThenDisplayINSERTCOIN() {
+		vendingMachine.selectProduct(Product.COLA);
+		vendingMachine.getDisplayMessage();
+		assertEquals("INSERT COIN", vendingMachine.getDisplayMessage());
+	}
+	
+	@Test
 	public void whenSelectColaWithNotEnoughMoneyInsertedThenDisplayPriceOfCola() {
 		vendingMachine.selectProduct(Product.COLA);
 		assertEquals("PRICE $1.00", vendingMachine.getDisplayMessage());

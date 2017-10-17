@@ -13,7 +13,9 @@ public class VendingMachine {
 	}
 	
 	public String getDisplayMessage() {
-		return displayMessage.toString();
+		String message = displayMessage.toString();
+		changeDisplayMessage(amount == 0 ? "INSERT COIN" : String.format("$%.2f", amount));
+		return message;
 	}
 	
 	public double getCoinReturnAmount() {
