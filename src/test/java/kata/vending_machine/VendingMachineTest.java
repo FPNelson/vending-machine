@@ -22,40 +22,40 @@ public class VendingMachineTest {
 	@Test
 	public void whenNickelIsInsertedInVendingMachineThenDisplayAddsFiveCentsToTotal() {
 		vendingMachine.insertCoin(Coin.NICKEL);
-		assertEquals("0.05", vendingMachine.getDisplayMessage());
+		assertEquals("$0.05", vendingMachine.getDisplayMessage());
 	}
 	
 	@Test
 	public void whenTwoNickelsAreInsertedInVendingMachineThenDisplayAddsTenCentsToTotal() {
 		vendingMachine.insertCoin(Coin.NICKEL);
 		vendingMachine.insertCoin(Coin.NICKEL);
-		assertEquals("0.10", vendingMachine.getDisplayMessage());
+		assertEquals("$0.10", vendingMachine.getDisplayMessage());
 	}
 	
 	@Test
 	public void whenDimeIsInsertedInVendingMachineThenDisplayAddsTenCentsToTotal() {
 		vendingMachine.insertCoin(Coin.DIME);
-		assertEquals("0.10", vendingMachine.getDisplayMessage());
+		assertEquals("$0.10", vendingMachine.getDisplayMessage());
 	}
 	
 	@Test
 	public void whenTwoDimesAreInsertedInVendingMachineThenDisplayAddsTwentyCentsToTotal() {
 		vendingMachine.insertCoin(Coin.DIME);
 		vendingMachine.insertCoin(Coin.DIME);
-		assertEquals("0.20", vendingMachine.getDisplayMessage());
+		assertEquals("$0.20", vendingMachine.getDisplayMessage());
 	}
 	
 	@Test
 	public void whenQuarterIsInsertedInVendingMachineThenDisplayAddsTwentyFiveCentsToTotal() {
 		vendingMachine.insertCoin(Coin.QUARTER);
-		assertEquals("0.25", vendingMachine.getDisplayMessage());
+		assertEquals("$0.25", vendingMachine.getDisplayMessage());
 	}
 	
 	@Test
 	public void whenTwoQuartersAreInsertedInVendingMachineThenDisplayAddsFiftyCentsToTotal() {
 		vendingMachine.insertCoin(Coin.QUARTER);
 		vendingMachine.insertCoin(Coin.QUARTER);
-		assertEquals("0.50", vendingMachine.getDisplayMessage());
+		assertEquals("$0.50", vendingMachine.getDisplayMessage());
 	}
 	
 	@Test
@@ -69,5 +69,11 @@ public class VendingMachineTest {
 		vendingMachine.insertCoin(Coin.PENNY);
 		vendingMachine.insertCoin(Coin.PENNY);
 		assertEquals(0.02, vendingMachine.getCoinReturnAmount(), 0.00);
+	}
+	
+	@Test
+	public void whenSelectColaWithNotEnoughMoneyInsertedThenDisplayPriceOfCola() {
+		vendingMachine.selectProduct(Product.COLA);
+		assertEquals("PRICE $1.00", vendingMachine.getDisplayMessage());
 	}
 }
