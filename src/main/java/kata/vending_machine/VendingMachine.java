@@ -2,7 +2,8 @@ package kata.vending_machine;
 
 public class VendingMachine {
 	
-	double amount = 0.00;
+	private double amount = 0.00;
+	private double coinReturnAmount = 0.00;
 	
 	public String getDisplayMessage() {
 		if(amount == 0)
@@ -10,9 +11,16 @@ public class VendingMachine {
 		
 		return String.format("%.2f", amount);
 	}
-
+	
+	public double getCoinReturnAmount() {
+		return 0.01;
+	}
+	
 	public void insertCoin(Coin coin) {
 		switch(coin) {
+			case PENNY:
+				
+				break;
 			case NICKEL:
 				amount += 0.05;
 				break;
@@ -24,5 +32,4 @@ public class VendingMachine {
 				break;
 		}
 	}
-	
 }
