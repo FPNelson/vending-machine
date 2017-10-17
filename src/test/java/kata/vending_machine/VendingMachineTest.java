@@ -63,4 +63,11 @@ public class VendingMachineTest {
 		vendingMachine.insertCoin(Coin.PENNY);
 		assertEquals(0.01, vendingMachine.getCoinReturnAmount(), 0.00);
 	}
+	
+	@Test
+	public void whenTwoPenniesAreInsertedInVendingMachineThenRejectsAndPutsBothIntoCoinReturn() {
+		vendingMachine.insertCoin(Coin.PENNY);
+		vendingMachine.insertCoin(Coin.PENNY);
+		assertEquals(0.02, vendingMachine.getCoinReturnAmount(), 0.00);
+	}
 }

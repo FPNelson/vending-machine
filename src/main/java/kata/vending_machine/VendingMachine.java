@@ -13,13 +13,13 @@ public class VendingMachine {
 	}
 	
 	public double getCoinReturnAmount() {
-		return 0.01;
+		return coinReturnAmount;
 	}
 	
 	public void insertCoin(Coin coin) {
 		switch(coin) {
 			case PENNY:
-				
+				coinReturnAmount += 0.01;
 				break;
 			case NICKEL:
 				amount += 0.05;
